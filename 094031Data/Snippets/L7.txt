@@ -1,0 +1,61 @@
+-------[ "File Exception 1" ]------------------------------------------------------------------------
+
+        except FileNotFoundError:
+            print("  The input file does not exist.")
+            return False
+					
+
+-------[ "File Exception 2" ]------------------------------------------------------------------------
+
+        try:
+            with open(wordlist_path, "r") as f:
+                self.wordlist = f.read().split()
+        except FileNotFoundError:
+            sys.exit("Cannot read the wordlist file at " +
+                     str(wordlist_path) +
+                     "\nCheck to see if the file is missing or corrupted.\n")
+
+
+-------[ "Custom Exception" ]------------------------------------------------------------------------
+
+"""This module includes custom exception classes for the WordCount program."""
+
+
+class FileEmptyError(Exception):
+    """Creates an exception for use when a WordCount input file is empty."""
+    pass
+
+
+class FileTooBigError(Exception):
+    """
+    Creates an exception for use when a WordCount
+    input file exceeds a specified file size.
+    """
+
+    def __init__(self, size):
+        """Construct class instance with file-size attribute."""
+        self.size = size
+
+    def __float__(self):
+        """Format file size as type float."""
+        return self.size
+
+
+-------[ "Raise Exceptions" ]------------------------------------------------------------------------
+
+            if file_size > 1e7:
+                raise FileTooBigError(file_size / 1e6)
+            if file_size == 0:
+                raise FileEmptyError()
+				
+				
+-------[ "Handle Raised Exceptions" ]----------------------------------------------------------------
+
+        except FileEmptyError:
+            print("  The input file is empty. There is nothing to analyze.")
+            return False
+
+        except FileTooBigError as e:
+            print(f"  The input is {float(e):.1f} megabytes. "
+                  "The maximum file size is 10 megabytes.")
+            return False

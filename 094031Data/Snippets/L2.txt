@@ -1,0 +1,16 @@
+-------[ "Size of Input File" ]----------------------------------------------------------------------
+
+size_query = input("How big (in megabytes) is your input file? ")
+size = int(size_query)
+size_in_bytes = size * 1000000
+
+
+-------[ "Print File Size in Bytes" ]----------------------------------------------------------------
+
+response = "Your " + size_query + f" megabyte file is equal to {size_in_bytes} bytes."
+print(response)
+
+
+-------[ "Convert File Size to Gigabytes" ]----------------------------------------------------------
+
+size_in_gigs = size / 1000

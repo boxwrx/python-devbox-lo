@@ -1,0 +1,66 @@
+-------[ "Write Log File" ]--------------------------------------------------------------------------
+
+        # Save the results to a log file.
+        with open(self.manuscript_file + "_results.txt", "w") as f:
+            f.write(f"Results for {self.manuscript_file}:\n\n")
+            for line in self.results_list:
+                f.write(line + "\n")
+
+
+-------[ "Read Manuscript" ]-------------------------------------------------------------------------
+
+        file_size = os.path.getsize(input_file_name)
+        print(f"  Manuscript size is {file_size} bytes.")
+        
+        with open(input_file_name, "r") as f:
+            print("  Reading file, one moment...")
+            self.words_in_manuscript = f.read().split()
+            print("  File read successfully.")
+
+
+-------[ "Read Wordlist" ]---------------------------------------------------------------------------
+
+        with open(wordlist_path, "r") as f:
+            self.wordlist = f.read().split()
+
+
+-------[ "Enumerate Files" ]-------------------------------------------------------------------------
+
+        print(f"\nThe {output_dir} output directory now contains:")
+        dir_contents = list(output_dir.iterdir())
+        for item in dir_contents:
+            if item.is_file():
+                print("  " + item.name)
+
+
+-------[ "Results Output" ]--------------------------------------------------------------------------
+
+        results = output_dir / (Path(self.manuscript_file).stem +
+                                "_results.txt")
+
+		
+-------[ "Create Directory" ]------------------------------------------------------------------------
+
+        # Create output dir if it doesn't exist.
+        if not output_dir.exists():
+            output_dir.mkdir()
+
+		
+-------[ "Timestamp" ]-------------------------------------------------------------------------------
+
+        timestamp = strftime("%Y-%m-%d_%H.%M.%S")
+
+
+-------[ "Backup File" ]-----------------------------------------------------------------------------
+
+        archive = output_dir / (Path(self.manuscript_file).stem +
+                                "_results_backup_" + timestamp + ".txt")
+
+		
+-------[ "Copy File" ]-------------------------------------------------------------------------------
+
+        print("  Log file saved to " + str(results))
+
+        # Copy archive file.
+        copyfile(results, archive)
+        print("  Archive file saved to " + str(archive))

@@ -1,0 +1,63 @@
+-------[ "Docstring 1" ]-----------------------------------------------------------------------------
+
+    """Compare user-input text file to English wordlist and return matches."""
+	
+	
+-------[ "Docstring 2" ]-----------------------------------------------------------------------------
+
+    """Sort and print each unique word with its frequency to the console.
+    Return the results as a list to user in file output."""
+
+
+-------[ "Parity Class" ]----------------------------------------------------------------------------
+
+class Parity:
+	def __init__(self, num):
+		self.num = num
+	def check_parity(self):
+		if self.num % 2 == 0:
+			print(f"{self.num} is even.")
+		else:
+			print(f"{self.num} is odd.")
+			
+					
+-------[ "Docstring 3" ]-----------------------------------------------------------------------------
+
+	"""Processes a text file for word-count analysis."""
+	
+		
+-------[ "Constructor" ]-----------------------------------------------------------------------------
+
+    def __init__(self, file):
+        """Construct class instance with file attribute."""
+        self.file = file	
+		
+		
+-------[ "WordProcess Instance" ]--------------------------------------------------------------------
+
+    class_init = WordProcess(user_input)
+	
+		
+-------[ "Function to Method" ]----------------------------------------------------------------------
+
+        new_result = WordProcess.print_top_words(class_init, common_word)
+		
+		
+-------[ "Sort Method" ]-----------------------------------------------------------------------------
+		
+    def sort_by_value(item):
+        """Create a key to be used to sort wordlist later."""
+        return item[-1]
+		
+		
+-------[ "Sort Call" ]-------------------------------------------------------------------------------
+
+        # Uses reverse order to sort (most frequent first).
+        items = sorted(word_count.items(), key=WordProcess.sort_by_value,
+                       reverse=True)
+
+
+-------[ "Counter" ]---------------------------------------------------------------------------------
+		
+        counter = collections.Counter(read_input)
+        word_count = dict(counter)
