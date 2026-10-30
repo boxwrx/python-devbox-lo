@@ -5,13 +5,16 @@
 ![Banner Light](./.assets/images/banner-python-vde-light.png#gh-light-mode-only)
 ![banner Dark](./.assets/images/banner-python-vde-dark.png#gh-dark-mode-only)
 <div align="right">
-    A <a href="https://github.com/boxwrx">Box Works</a> Coding Environment<img alt="Box Logo" src="./.assets/images/box-small.png" />
+    A <a href="https://github.com/boxwrx">Box Works</a> Coding Environment designed for 
+    <img alt="Logical Operations" src="./.assets/images/logical-operations.png" />
 </div>
 
 # Introduction
 
-This is a general Python development environment designed to be cloud-hosted or started in a local docker container.
-It is purely an empty sandbox for playing with Python in Linux.
+This is a modified version of the general Python development environment which includes the lab files for the
+Logical Operations *Introduction to Python* course.
+It is designed to be cloud-hosted or started in a local docker container.
+It is a sandbox for playing with Python in Linux.
 A virtual Python environment has been established under *.venv*, and the *settings.json* file sets the default
 Python interpreter to this environment.
 
