@@ -11,7 +11,7 @@
 
 # Introduction
 
-This is a modified version of the general Python development environment which includes the lab files for the
+This version of the general Python development environment includes the lab files for the
 Logical Operations *Introduction to Python* course.
 It is designed to be cloud-hosted or started in a local docker container.
 It is a sandbox for playing with Python in Linux.
